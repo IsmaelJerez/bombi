@@ -36,6 +36,7 @@ int calculate_result(int white_balls[5], int power_ball)
 	}
     }
     
+	// lottery ball numbers are always shown sorted
     qsort(white_balls, 5, sizeof(int), my_sort_func);
 
     return 0;
@@ -80,10 +81,12 @@ int main(int argc, char** argv)
 	{
 		goto usage_error;
 	}
-	
-	int power_ball = balls[5];
 
+	// the power ball is always the last one given
+	int power_ball = balls[5];
 	int result = calculate_result(balls, power_ball);
+	// calculate result can return -1 if the ball numbers
+	// are out of range
 
 	if (result < 0)
 	{
