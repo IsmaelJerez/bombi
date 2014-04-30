@@ -71,7 +71,6 @@ int main(int argc, char** argv){
 	return 0;
 
 	usage_error:
-		fprintf(stderr, "Usage: %s [-favorite] (5 white balls)
-		power_ball\n", argv[0]);
+		fprintf(stderr, "Usage: %s [-favorite] (5 white balls) power_ball\n", argv[0]);
 		return -1;
 }
