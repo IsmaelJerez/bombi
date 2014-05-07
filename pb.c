@@ -47,16 +47,16 @@ int main(int argc, char** argv)
 {
 	int balls[6];
 	int count_balls = 0;
-	bool favorite = false;
+	bool favourite = false;
 	for (int i=1; i<argc; i++)
 	{
 		const char* arg = argv[i];
 	
 		if ('-' == arg[0])
 		{
-			if (0 == strcmp(arg, "-favorite"))
+			if (0 == strcmp(arg, "-favourite"))
 			{
-				favorite = true;
+				favourite = true;
 			}
 			else
 			{
@@ -99,7 +99,7 @@ int main(int argc, char** argv)
 		result = result * 2;
 	}
 
-	if (favorite)
+	if (favourite)
 	{
 		result = result * 2;
 	}
@@ -107,6 +107,6 @@ int main(int argc, char** argv)
 	return 0;
 
 usage_error:
-	fprintf(stderr, "Usage: %s [-favorite] (5 white balls) power_ball\n", argv[0]);
+	fprintf(stderr, "Usage: %s [-favourite] (5 white balls) power_ball\n", argv[0]);
 	return -1;
 }
