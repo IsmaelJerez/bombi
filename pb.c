@@ -58,11 +58,20 @@ int calculate_result(int white_balls[5], int power_ball)
 	  return -1;
 	}
     }
-  
-  // lottery ball numbers are always shown sorted
-  qsort(white_balls, 5, sizeof(int), my_sort_func);
-  // Here should be typed a function to calculate the probability
-  return 0;
+    
+	// lottery ball numbers are always shown sorted
+    qsort(white_balls, 5, sizeof(int), my_sort_func);
+	// Here should be typed a function to calculate the probability
+	
+	printf("Your sorted numbers: \n");
+
+	for (int i = 0; i < 5; i++) {
+		printf("%d ", white_balls[i]);
+	}
+
+	printf("The power ball: %d \n", power_ball);
+
+    return 0;
 }
 
 int main(int argc, char** argv)
