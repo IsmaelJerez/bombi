@@ -250,7 +250,7 @@ int calculate_result(int white_balls[5], int power_ball)
 }
 
 
-void lottery_numbers_simulation(int lott[6]){
+void lottery_numbers_simulation(int *lott){
 
 	int w_balls[5];
 	int p_ball;
@@ -269,17 +269,22 @@ void lottery_numbers_simulation(int lott[6]){
 				}
 			}
 		}
-		printf("&d", w_balls[i]);
+		printf("%d ", w_balls[i]);
 	}
+
+	for (i=0; i<= 4; i++) {
+		lott[i] = w_balls[i];
+	}
+	lott[5] = p_ball;
 }
 
 void showing_results(int white_balls[5], int power_ball)
 {
-    printf("The numbers of the white balls sorted: \n");
+    printf("\nThe numbers of the white balls sorted: \n");
     for (int i = 0; i < 5; i++){
         printf("%d ", white_balls[i]);
     }
-    printf("The power ball: %d \n", power_ball);
+    printf("\nThe power ball: %d \n", power_ball);
 }
 
 
