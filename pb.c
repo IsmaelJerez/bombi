@@ -233,20 +233,36 @@ static int my_sort_func(const void* p1, const void* p2)
 }
 
 
-int calculate_result(int white_balls[5], int power_ball)
+int calculate_result(int white_balls[5], int power_ball, int lott[6])
 {
+  int white_lott[5];
+  int p_lott = lott[5];
   for (int i=0; i<5; i++)
-    {
-      if ((white_balls[i] < 1) || (white_balls[i] > MAX_WHITE_BALL))
-	{
-	  return -1;
-	}
-    }
-  
+  {
+    	if ((white_balls[i] < 1) || (white_balls[i] > MAX_WHITE_BALL))
+		{
+		  	return -1;
+		}
+		white_lott[i] = lott[i];
+  }
+ 
   // lottery ball numbers are always shown sorted
   qsort(white_balls, 5, sizeof(int), my_sort_func);
+  qsort(white_lott, 5, sizeof(int), my_sort_func);
   // Here should be typed a function to calculate the probability
-  return 0;
+  
+  int cont = 0;
+  for (int i=0; i<5; i++) {
+	if (white_balls[i] == white_lott[i]) {
+		cont++;
+	}	
+  }
+
+  if (p_lott == power_ball)
+	return (float)(cont/5 + 0.1);
+
+  else
+	return (float)(cont/5);
 }
 
 
@@ -321,7 +337,7 @@ int main(int argc, char** argv)
 	
 	printf("\n--- The lottery numbers ---\n");
     lottery_numbers_simulation(lott);
-	int result = calculate_result(balls, power_ball); 
+	int result = calculate_result(balls, power_ball, lott); 
     showing_results(balls, power_ball);
     // calculate result can return -1 if the ball numbers
     // are out of range
