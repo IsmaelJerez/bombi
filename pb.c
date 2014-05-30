@@ -273,6 +273,15 @@ void lottery_numbers_simulation(){
 	}
 }
 
+void showing_results(int white_balls[5], int power_ball)
+{
+    printf("The numbers of the white balls sorted: \n");
+    for (int i = 0; i < 5; i++){
+        printf("%d ", white_balls[i]);
+    }
+    printf("The power ball: %d \n", power_ball);
+}
+
 
 int main(int argc, char** argv)
 {
@@ -303,7 +312,7 @@ int main(int argc, char** argv)
     // the powerball is always the last one given
     int power_ball = balls[5];
     
-	lottery_numbers_simulation();
+	
 
     int result = calculate_result(balls, power_ball);
     
@@ -327,6 +336,8 @@ int main(int argc, char** argv)
         result = result * 2;
     }
 
+    printf("\n--- The lottery numbers ---\n");
+    lottery_numbers_simulation();
     printf("%d percent chance of winning\n", result);
 
     return 0;
