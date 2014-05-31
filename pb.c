@@ -54,6 +54,19 @@ int calculate_result(int white_balls[5], int power_ball,int lott[6])
 {
   int white_lott[5];
   int p_lott = lott[5];
+	int result = 0;
+
+
+// Percent white balls
+for (int i = 0; i < 5; i++){
+for (int j = 0; j < 5; j++){
+if (white_balls[i] == lott[j])
+}
+}
+// Percent power ball
+if (power_ball == lott[5])
+result += 0.1;
+
   for (int i=0; i<5; i++)
   {
     	if ((white_balls[i] < 1) || (white_balls[i] > MAX_WHITE_BALL))
