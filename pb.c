@@ -81,6 +81,7 @@ result += 0.1;
   qsort(white_lott, 5, sizeof(int), my_sort_func);
   // Here should be typed a function to calculate the probability
   
+
   int cont = 0;
   for (int i=0; i<5; i++) {
 	if (white_balls[i] == white_lott[i]) {
