@@ -176,6 +176,11 @@ int main(int argc, char** argv){
 
         printf("\n--- The lottery numbers ---\n");
         lottery_numbers_simulation(lott);
+
+	// Head for the lottery numbers
+printf(“\n--- The lottery numbers ---\n”);
+// Head for my numbers
+printf(“\n--- Your lottery numbers ---\n”);
 	int result = calculate_result(balls, power_ball, lott); 
         showing_results(balls, power_ball);
         // calculate result can return -1 if the ball numbers
