@@ -175,6 +175,7 @@ int main(int argc, char** argv){
 	// are out of range
 
         printf("\n--- The lottery numbers ---\n");
+	//Sort the lottery numbers
         lottery_numbers_simulation(lott);
 
 	// Head for the lottery numbers
